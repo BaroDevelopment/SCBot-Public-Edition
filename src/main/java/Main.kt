@@ -41,7 +41,7 @@ val commandList = listOf("!timeout", "!m", "!untimeout", "!um", "!instantban", "
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
-        val token = System.getenv("BOT_TOKEN") ?: Throwable("No token found")
+        val token = System.getenv("BOT_TOKEN") ?: throw IllegalArgumentException("No token found")
             println("Token set.")
 
         val jda = JDABuilder.create(
